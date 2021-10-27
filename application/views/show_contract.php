@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="<?php echo base_url('public'); ?>/contract.css">
 <?php foreach ($query as $item) { ?>
     <div class="container">
+        <br>
         <h2 align="center">สัญญาจ้าง</h2>
         <div class="row">
             <div class="col-1"> </div>

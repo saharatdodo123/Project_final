@@ -35,7 +35,7 @@ class Payment_Controller extends CI_Controller {
 		$data['query'] = $this->CM->showcontractByid($cm_id);
 		$this->load->view('header_admin');
 		$this->load->view('showpayment_admin',$data);
-		$this->load->view('footer');
+		$this->load->view('footer_admin');
 	}
 
 	public function showpayment2_admin()
@@ -44,7 +44,7 @@ class Payment_Controller extends CI_Controller {
 		$data['query'] = $this->CM->showcontractByid($cm_id);
 		$this->load->view('header_admin');
 		$this->load->view('showpayment2_admin',$data);
-		$this->load->view('footer');
+		$this->load->view('footer_admin');
 	}
 
 	public function showpayment3_admin()
@@ -53,6 +53,6 @@ class Payment_Controller extends CI_Controller {
 		$data['query'] = $this->CM->showcontractByid($cm_id);
 		$this->load->view('header_admin');
 		$this->load->view('showpayment3_admin',$data);
-		$this->load->view('footer');
+		$this->load->view('footer_admin');
 	}
 }

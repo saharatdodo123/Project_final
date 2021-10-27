@@ -11,9 +11,11 @@
 
 <body>
   <div class="container">
-    <div class="alert alert-secondary" role="alert">
-      <h1>ช่างภาพในระบบ</h1>
-    </div>
+    <center>
+      <div class="alert alert-secondary" role="alert">
+        ช่างภาพในระบบ
+      </div>
+    </center>
     <table style="background: #cdcdcd;" class="table table-striped table-hover" id="users-list">
       <thead class="table-light">
         <tr>

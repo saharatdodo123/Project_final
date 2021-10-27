@@ -11,9 +11,10 @@
 <body>
     <?php foreach ($query as $item) { ?>
         <div class="container">
+            <br><br>
             <center>
                 <div class="alert alert-dark" role="alert">
-                    <h3>รายละเอียดการตรวจสอบการชำระเงินงวดที่2</h3>
+                    รายละเอียดการตรวจสอบการชำระเงินงวดที่2
                 </div>
             </center>
             <br>

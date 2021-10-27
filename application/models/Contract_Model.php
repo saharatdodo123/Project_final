@@ -21,6 +21,18 @@ class Contract_Model extends CI_Model {
         return $query->result();
     }
 
+    function showcontractAll()
+    {
+        $this->db->select('*')->from('contract_employment')
+        ->join('photographer', 'photographer.ptg_id=contract_employment.pg_id')
+        ->join('customer', 'customer.cus_id=contract_employment.cs_id')
+        ->join('ptg_address', 'ptg_address.pg_id=contract_employment.pg_id')
+        ->join('cus_address', 'cus_address.cus_id=contract_employment.cs_id')
+        ->join('payment', 'payment.pg_id=contract_employment.pg_id');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function showcontractByid($cm_id)
     {
         $this->db->where('cm_id',$cm_id);

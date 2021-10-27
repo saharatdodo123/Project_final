@@ -56,7 +56,7 @@ class Contract_Controller extends CI_Controller
 	{
 		$cm_id = $this->input->post('cm_id');
 		$data['query'] = $this->CM->showcontractByid($cm_id);
-		$this->load->view('header_cus');
+		$this->load->view('header_cus2');
 		$this->load->view('edit_contract', $data);
 		$this->load->view('footer');
 	}
@@ -179,7 +179,7 @@ class Contract_Controller extends CI_Controller
 	{
 		$cm_id = $this->input->post('cm_id');
 		$data['query'] = $this->PMM->showpayment($cm_id);
-		$this->load->view('header_cus');
+		$this->load->view('header_cus2');
 		$this->load->view('history_payment_cus', $data);
 		$this->load->view('footer');
 	}
@@ -270,7 +270,7 @@ class Contract_Controller extends CI_Controller
 		$data['query'] = $this->CM->getcontract_admin();
 		$this->load->view('header_admin');
 		$this->load->view('history_paymentcheck_admin', $data);
-		$this->load->view('footer_ptg');
+		$this->load->view('footer_admin');
 	}
 
 	public function history_paymentcheck2_admin()
@@ -344,7 +344,7 @@ class Contract_Controller extends CI_Controller
 			$cus_id = $this->session->userdata['cus_id'];
 			$data['query'] = $this->CM->getcontract_cus($cus_id);
 			$this->load->view('header_cus');
-			$this->load->view('history_paymentcheck_cus', $data);
+			$this->load->view('history', $data);
 			$this->load->view('footer');
 		} else {
 			echo "<script language='JavaScript'>";
@@ -391,7 +391,7 @@ class Contract_Controller extends CI_Controller
 			$cus_id = $this->session->userdata['cus_id'];
 			$data['query'] = $this->CM->getcontract_cus($cus_id);
 			$this->load->view('header_cus');
-			$this->load->view('history_paymentcheck2_cus', $data);
+			$this->load->view('history', $data);
 			$this->load->view('footer');
 		} else {
 			echo "<script language='JavaScript'>";
@@ -538,7 +538,7 @@ class Contract_Controller extends CI_Controller
 		echo "</script>";
 		$this->load->view('header_admin');
 		$this->load->view('history_paymentcheck_admin', $data);
-		$this->load->view('footer');
+		$this->load->view('footer_admin');
 	}
 
 	public function showcontractingsuccess_ptg()
@@ -553,7 +553,7 @@ class Contract_Controller extends CI_Controller
 	{
 		$cm_id = $this->input->post('cm_id');
 		$data['query'] = $this->CM->showcontract($cm_id);
-		$this->load->view('header_cus');
+		$this->load->view('header_cus2');
 		$this->load->view('show_contract', $data);
 		$this->load->view('footer');
 	}
@@ -562,7 +562,7 @@ class Contract_Controller extends CI_Controller
 	{
 		$cm_id = $this->input->post('cm_id');
 		$data['query'] = $this->CM->showcontract($cm_id);
-		$this->load->view('header_cus');
+		$this->load->view('header_cus2');
 		$this->load->view('work_confirmation', $data);
 		$this->load->view('footer');
 	}
@@ -608,5 +608,11 @@ class Contract_Controller extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	
+	public function history_contract_admin()
+	{
+		$data['query'] = $this->CM->showcontractAll();
+		$this->load->view('header_admin');
+		$this->load->view('history_contract_admin', $data);
+		$this->load->view('footer_admin');
+	}
 }

@@ -27,4 +27,9 @@ class Admin_Model extends CI_Model {
         return $query->result();
     }
 
+    function register_admin($data)
+    {
+        $this->db->insert('admin', $data);
+    }
+
 }

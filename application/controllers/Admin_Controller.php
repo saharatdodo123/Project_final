@@ -20,7 +20,7 @@ class Admin_Controller extends CI_Controller {
 		$data['query'] = $this->AMM->showadmin($admin_id);
 		$this->load->view('header_admin');
         $this->load->view('home_admin', $data);
-        $this->load->view('footer');
+        $this->load->view('footer_admin');
 	}
 
 	public function login_admin()
@@ -28,6 +28,37 @@ class Admin_Controller extends CI_Controller {
 		$this->load->view('header2');
 		$this->load->view('login_admin');
 		$this->load->view('footer');
+	}
+
+    public function register_admin()
+	{
+		$this->load->view('header_admin');
+		$this->load->view('register_admin');
+		$this->load->view('footer_admin');
+	}
+
+	public function register_admin_add()
+	{
+		$data = array(
+			'name' => $this->input->post("text-name"),
+			'lastname' => $this->input->post("text-lastname"),
+			'email' => $this->input->post("text-email"),
+			'password' => $this->input->post("text-password"),
+            'sex' => $this->input->post("text-sex"),
+			'phone' => $this->input->post("text-phone"),
+			'address' => $this->input->post("text-ad"),
+			'rank' => $this->input->post("text-rank")
+		);
+		$this->AMM->register_admin($data);
+		echo "<script language='JavaScript'>";
+        echo "alert('ลงทะเบียนสำเสร็จ')";
+        echo "</script>";
+		$admin_id = $this->session->userdata['admin_id'];
+		$data['query'] = $this->AMM->showadmin($admin_id);
+		$this->load->view('header_admin');
+		$this->load->view('home_admin', $data);
+		$this->load->view('footer_admin');
+
 	}
 
 	public function logging_admin()
@@ -47,12 +78,12 @@ class Admin_Controller extends CI_Controller {
                 echo "</script>";
                 $this->load->view('header_admin');
                 $this->load->view('home_admin', $data);
-                $this->load->view('footer');
+                $this->load->view('footer_admin');
             } else {
                     echo "<script language='JavaScript'>";
                     echo "alert('กรุณาใส่รหัสอีกครั้ง')";
                     echo "</script>";
-					$this->load->view('header');
+					$this->load->view('header2');
 					$this->load->view('login_admin');
 					$this->load->view('footer');
                 //$this->session->set_flashdata('msg_error', 'รหัสผ่านไม่ถูกต้องกรุณาตรวจสอบอีกครั้งค่ะ !');
