@@ -27,7 +27,7 @@
                     <h6>ผู้ว่าจ้างและผู้รับจ้างตกลงรับจ้างตกลงรับจ้างทำงาน ถ่ายภาพ <?php echo $item->type_of_work ?> ณ <?php echo $item->at ?> เลขที่ <?php echo $item->house_number ?>
                         ตำบล <?php echo $item->canton ?> อำเภอ <?php echo $item->district ?> จังหวัด <?php echo $item->province ?></h6>
                 </div>
-                <h6>ในวันที่ <?php echo $item->day_month_year ?> เวลา <?php echo $item->time ?> ถึง <?php echo $item->to_time ?> ตามข้อกำหนดและเงื่อนไข
+                <h6>ในวันที่ <?php echo $item->day_month_year ?> เวลา <?php echo $item->time ?> ตามข้อกำหนดและเงื่อนไข
                     สัญญานี้รวมทั้งเอกสารแนบท้ายสัญญา</h6>
             </div>
             <div class="row">

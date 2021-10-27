@@ -140,7 +140,7 @@
                                 <td id="center"><?php echo $item->type_of_work ?></td>
                                 <td id="center"><?php echo $item->form_of_employment ?></td>
                                 <td id="center"><?php echo $item->day_month_year ?></td>
-                                <td id="center"><?php echo $item->time ?> - <?php echo $item->to_time ?></td>
+                                <td id="center"><?php echo $item->time ?></td>
                                 <td id="right"><?php echo number_format($item->service_rates) ?> บาท</td>
                                 <td id="center"><?php echo $item->status ?></td>
                                 <td>

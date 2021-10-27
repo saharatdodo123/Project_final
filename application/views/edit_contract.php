@@ -70,15 +70,11 @@
                     </div>
                     <div class="col mb-3">
                         <label for="exampleFormControlInput1" class="form-label">วัน/เดือน/ปี</label>
-                        <input type="text" name="day_month_year" class="form-control" id="exampleFormControlInput1" value="<?php echo $item->day_month_year ?>">
+                        <input type="date" name="day_month_year" class="form-control" id="exampleFormControlInput1" value="<?php echo $item->day_month_year ?>">
                     </div>
                     <div class="col mb-3">
                         <label for="exampleFormControlInput1" class="form-label">เวลา</label>
                         <input type="text" name="time" class="form-control" id="exampleFormControlInput1" value="<?php echo $item->time ?>">
-                    </div>
-                    <div class="col mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">ถึง</label>
-                        <input type="text" name="to_time" class="form-control" id="exampleFormControlInput1" value="<?php echo $item->to_time ?>">
                     </div>
                 </div>
                 <br>

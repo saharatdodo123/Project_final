@@ -11,14 +11,16 @@
     <div class="container">
         <br><br>
         <center>
-            <div class="alert alert-dark" role="alert">
-                <h1>สมัครเป็นช่างภาพ</h1>
+            <div class="alert alert-info" role="alert">
+                สมัครเป็นช่างภาพ
             </div>
         </center>
-        <form action="register_ptg_add" method="post">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="inputGroupFile02" name="ptg_img" value="default.png" hidden>
+        <form action="register_ptg_add" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="formFileLg" class="form-label">รูปภาพ</label>
+                <input class="form-control form-control-lg" id="formFileLg" type="file" name="ptg_img">
             </div>
+            <br>
             <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">ชื่อ</label>
@@ -154,34 +156,7 @@
                     <input type="text" name="message" class="form-control" id="exampleFormControlInput1" placeholder="https://www.facebook.com/messages/t/เลขไอดีเฟชบุ๊ค" required>
                 </div>
             </div>
-            <h5>ความถนัด :</h5><br>
-            <div class="row">
-                <div class="col form-check">
-                    <input class="form-check-input" type="checkbox" id="vehicle1" name="favorite_job1" value="สถาปัตยกรรม">
-                    <label for="vehicle1">สถาปัตยกรรม</label>
-                </div>
-                <div class="col form-check">
-                    <input class="form-check-input" type="checkbox" id="vehicle2" name="favorite_job2" value="อีเวนต์">
-                    <label for="vehicle2">อีเวนต์</label>
-                </div>
-                <div class="col form-check">
-                    <input class="form-check-input" type="checkbox" id="vehicle3" name="favorite_job3" value="รับปริญญา">
-                    <label for="vehicle3">รับปริญญา</label>
-                </div>
-                <div class="col form-check">
-                    <input class="form-check-input" type="checkbox" id="vehicle4" name="favorite_job4" value="บุคคล/แฟชั่น">
-                    <label for="vehicle4">บุคคล/แฟชั่น</label>
-                </div>
-                <div class="col form-check">
-                    <input class="form-check-input" type="checkbox" id="vehicle5" name="favorite_job5" value="สินค้า/อาหาร">
-                    <label for="vehicle5">สินค้า/อาหาร</label>
-                </div>
-                <div class="col form-check">
-                    <input class="form-check-input" type="checkbox" id="vehicle6" name="favorite_job6" value="งานแต่ง/พรีเวดดิ้ง">
-                    <label for="vehicle6">งานแต่ง/พรีเวดดิ้ง</label>
-                </div>
-                <div class="col-3"></div>
-            </div><br>
+            <br>
             <h5>การเงิน :</h5><br>
             <div class="row">
                 <div class="col-6 mb-3">

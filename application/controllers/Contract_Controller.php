@@ -38,7 +38,6 @@ class Contract_Controller extends CI_Controller
 			'province' => $this->input->post("province"),
 			'day_month_year' => $this->input->post("day_month_year"),
 			'time' => $this->input->post("time"),
-			'to_time' => $this->input->post("to_time"),
 			'status' => $this->input->post("status")
 		);
 		$this->CM->contract($contract_employment);
@@ -74,7 +73,6 @@ class Contract_Controller extends CI_Controller
 			'province' => $this->input->post("province"),
 			'day_month_year' => $this->input->post("day_month_year"),
 			'time' => $this->input->post("time"),
-			'to_time' => $this->input->post("to_time")
 		);
 		$contract_employmentid = array(
 			'cm_id' => $this->input->post("cm_id")
@@ -166,15 +164,6 @@ class Contract_Controller extends CI_Controller
 		$this->load->view('footer_ptg');
 	}
 
-	public function history_success_ptg()
-	{
-		$ptg_id = $this->session->userdata['ptg_id'];
-		$data['query'] = $this->CM->getcontract_ptg($ptg_id);
-		$this->load->view('header_ptg');
-		$this->load->view('history_success_ptg', $data);
-		$this->load->view('footer_ptg');
-	}
-
 	public function history_payment_cus()
 	{
 		$cm_id = $this->input->post('cm_id');
@@ -238,15 +227,6 @@ class Contract_Controller extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function history_paymentcheck_ptg()
-	{
-		$ptg_id = $this->session->userdata['ptg_id'];
-		$data['query'] = $this->CM->getcontract_ptg($ptg_id);
-		$this->load->view('header_ptg');
-		$this->load->view('history_paymentcheck_ptg', $data);
-		$this->load->view('footer_ptg');
-	}
-
 	public function history_submitwork_ptg()
 	{
 		$ptg_id = $this->session->userdata['ptg_id'];
@@ -296,15 +276,6 @@ class Contract_Controller extends CI_Controller
 		$this->load->view('header_cus');
 		$this->load->view('history_paymentsuccess_cus', $data);
 		$this->load->view('footer');
-	}
-
-	public function history_paymentsuccess_ptg()
-	{
-		$ptg_id = $this->session->userdata['ptg_id'];
-		$data['query'] = $this->CM->getcontract_ptg($ptg_id);
-		$this->load->view('header_ptg');
-		$this->load->view('history_paymentsuccess_ptg', $data);
-		$this->load->view('footer_ptg');
 	}
 
 	public function upload_file()
@@ -439,7 +410,7 @@ class Contract_Controller extends CI_Controller
 			$data['query'] = $this->CM->getcontract_ptg($ptg_id);
 			$this->load->view('header_ptg');
 			$this->load->view('history_ptg', $data);
-			$this->load->view('footer');
+			$this->load->view('footer_ptg');
 		} else {
 			echo "<script language='JavaScript'>";
 			echo "alert('อับโหลดไม่สำเร็จ')";
@@ -519,8 +490,8 @@ class Contract_Controller extends CI_Controller
 		echo "alert('ยืนยันการทำสัญญา')";
 		echo "</script>";
 		$this->load->view('header_ptg');
-		$this->load->view('history_success_ptg', $data);
-		$this->load->view('footer');
+		$this->load->view('history_ptg', $data);
+		$this->load->view('footer_ptg');
 	}
 
 	public function success_payment()

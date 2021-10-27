@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 25, 2021 at 07:59 AM
+-- Generation Time: Oct 27, 2021 at 10:14 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `photogeapher_gallery`
+-- Database: `photogeapher_gallery1`
 --
 
 -- --------------------------------------------------------
@@ -30,18 +30,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `admin_id` int(11) NOT NULL,
-  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `lastname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `lastname` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `sex` varchar(4) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` int(10) NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `rank` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `name`, `lastname`, `email`, `password`) VALUES
-(1, 'สหรัฐ ', 'สารสุวรรณ', '614259057@webmail.npru.ac.th', '123456789');
+INSERT INTO `admin` (`admin_id`, `name`, `lastname`, `email`, `password`, `sex`, `phone`, `address`, `rank`) VALUES
+(1, 'สหรัฐ ', 'สารสุวรรณ', 'admin@gmail.com', '123456789', 'ชาย', 950032145, '45/1 ซ.ทางรถไฟตะวันตก3 ถ.ทางรถไฟตะวันตก ต.นครปฐม อ.เมือง จ.นครปฐม', 'chairman');
 
 -- --------------------------------------------------------
 
@@ -442,13 +446,13 @@ ALTER TABLE `cus_address`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `photographer`
 --
 ALTER TABLE `photographer`
-  MODIFY `ptg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ptg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `photographers_wage_rates`
@@ -460,13 +464,13 @@ ALTER TABLE `photographers_wage_rates`
 -- AUTO_INCREMENT for table `ptg_address`
 --
 ALTER TABLE `ptg_address`
-  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `ptg_electronicdevice`
 --
 ALTER TABLE `ptg_electronicdevice`
-  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `ptg_imageresult`
@@ -478,7 +482,7 @@ ALTER TABLE `ptg_imageresult`
 -- AUTO_INCREMENT for table `ptg_social`
 --
 ALTER TABLE `ptg_social`
-  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables

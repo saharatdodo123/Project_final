@@ -83,16 +83,38 @@ class Photographer_Controller extends CI_Controller
 
 	public function register_ptg_add()
 	{
-		$photographer = array(
-			'ptg_img' => $this->input->post("ptg_img"),
-			'ptg_firstname' => $this->input->post("ptg_firstname"),
-			'ptg_lastname' => $this->input->post("ptg_lastname"),
-			'ptg_nickname' => $this->input->post("ptg_nickname"),
-			'sex' => $this->input->post("sex"),
-			'ptg_email' => $this->input->post("ptg_email"),
-			'ptg_password' => $this->input->post("ptg_password"),
-			'ptg_phone' => $this->input->post("ptg_phone")
-		);
+		$ptg_firstname = $this->input->post('ptg_firstname');
+		$ptg_lastname = $this->input->post('ptg_lastname');
+		$ptg_nickname = $this->input->post('ptg_nickname');
+		$sex = $this->input->post('sex');
+		$ptg_email = $this->input->post('ptg_email');
+		$ptg_password = $this->input->post('ptg_password');
+		$ptg_phone = $this->input->post('ptg_phone');
+		$data = array();
+		$config['upload_path'] = 'img/';
+		$config['allowed_types'] = 'jpg|png';
+		$config['max_size'] = 5024;
+		$config['encrypt_name'] = true;
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('ptg_img')) {
+			$ptg_img = '';
+		} else {
+			$fileData = $this->upload->data();
+			$ptg_img = $data['ptg_img'] = $fileData['file_name'];
+		}
+
+		$this->db->set('ptg_firstname', $ptg_firstname);
+		$this->db->set('ptg_lastname', $ptg_lastname);
+		$this->db->set('ptg_nickname', $ptg_nickname);
+		$this->db->set('sex', $sex);
+		$this->db->set('ptg_email', $ptg_email);
+		$this->db->set('ptg_password', $ptg_password);
+		$this->db->set('ptg_phone', $ptg_phone);
+		$this->db->set('ptg_img', $ptg_img);
+		$this->db->INSERT('photographer');
+
 		$ptg_address = array(
 			'pg_house_number' => $this->input->post("pg_house_number"),
 			'pg_canton' => $this->input->post("pg_canton"),
@@ -109,12 +131,6 @@ class Photographer_Controller extends CI_Controller
 			'battery' => $this->input->post("battery")
 		);
 		$ptg_social = array(
-			'favorite_job1' => $this->input->post("favorite_job1"),
-			'favorite_job2' => $this->input->post("favorite_job2"),
-			'favorite_job3' => $this->input->post("favorite_job3"),
-			'favorite_job4' => $this->input->post("favorite_job4"),
-			'favorite_job5' => $this->input->post("favorite_job5"),
-			'favorite_job6' => $this->input->post("favorite_job6"),
 			'message' => $this->input->post("message"),
 			'website' => $this->input->post("website"),
 			'youtube' => $this->input->post("youtube"),
@@ -128,11 +144,11 @@ class Photographer_Controller extends CI_Controller
 			'account_name' => $this->input->post("account_name"),
 			'account_number' => $this->input->post("account_number")
 		);
-		$this->PTM->register_ptg($photographer, $ptg_address, $ptg_electronicdevice, $ptg_social, $payment);
+		$this->PTM->register_ptg($ptg_address, $ptg_electronicdevice, $ptg_social, $payment);
 		echo "<script language='JavaScript'>";
 		echo "alert('ลงทะเบียนสำเสร็จ')";
 		echo "</script>";
-		$this->load->view('header');
+		$this->load->view('header2');
 		$this->load->view('login_ptg');
 		$this->load->view('footer');
 	}
@@ -204,7 +220,7 @@ class Photographer_Controller extends CI_Controller
 
 		$this->db->set('ptg_img', $img);
 		$this->db->where('ptg_id', $ptg_id);
-		$result = $this->db->update('photographer');
+		$this->db->update('photographer');
 
 		$ptg_profile = array(
 			'ptg_id' => $this->input->post("ptg_id"),

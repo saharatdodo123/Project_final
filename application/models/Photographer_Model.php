@@ -20,9 +20,8 @@ class Photographer_Model extends CI_Model {
         return $data;
     }
 
-    function register_ptg($photographer, $ptg_address, $ptg_electronicdevice, $ptg_social, $payment)
+    function register_ptg($ptg_address, $ptg_electronicdevice, $ptg_social, $payment)
     {
-        $this->db->insert('photographer', $photographer);
         $this->db->insert('ptg_address', $ptg_address);
         $this->db->insert('ptg_electronicdevice', $ptg_electronicdevice);
         $this->db->insert('ptg_social', $ptg_social);

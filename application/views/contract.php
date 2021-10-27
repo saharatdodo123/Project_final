@@ -6,8 +6,8 @@ $id = $this->session->userdata["cus_id"];
     <div class="container">
         <div class="row">
             <center>
-                <div class="alert alert-dark" role="alert">
-                    <h2>สัญญาจ้าง</h2>
+                <div class="alert alert-info" role="alert">
+                    สัญญาจ้าง
                 </div>
             </center>
         </div>
@@ -38,7 +38,7 @@ $id = $this->session->userdata["cus_id"];
                         <label for="exampleFormControlInput1" class="form-label">รูปแบบการจ้างงาน</label>
                         <select name="form_of_employment" class="form-select" aria-label="Default select example">
                             <option selected> - </option>
-                            <option value="ครึ่งวัน">ครึ่งวัน</option>
+                            <option value="5 ชั่วโมง">5 ชั่วโมง</option>
                             <option value="1 วัน">1 วัน</option>
                             <option value="2 วัน">2 วัน</option>
                             <option value="3 วัน">3 วัน</option>
@@ -91,19 +91,19 @@ $id = $this->session->userdata["cus_id"];
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">วัน เดือน ปี</label>
-                        <input type="text" name="day_month_year" class="form-control" id="exampleFormControlInput1" placeholder="17 มกราคม 2564 หรือ 16 มกราคม 2564 - 18 มกราคม 2564" required>
+                        <input type="date" name="day_month_year" class="form-control" id="exampleFormControlInput1" placeholder="17 มกราคม 2564 หรือ 16 มกราคม 2564 - 18 มกราคม 2564" required>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">เวลา</label>
+                        <label for="exampleFormControlInput1" class="form-label">เวลานัดหมาย</label>
                         <input type="text" name="time" class="form-control" id="exampleFormControlInput1" placeholder="09.00 น." required>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">ถึง</label>
-                        <input type="text" name="to_time" class="form-control" id="exampleFormControlInput1" placeholder="13.00 น." required>
+                        <input type="text" name="to_time" class="form-control" id="exampleFormControlInput1" placeholder="13.00 น.">
                     </div>
                     <div class="mb-3">
                         <input type="text" name="status" class="form-control" value="รอการอนุมัติ" hidden>

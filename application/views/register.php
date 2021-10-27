@@ -22,8 +22,8 @@
             <div class="col-5">
                 <br>
                 <center>
-                    <div class="alert alert-dark" role="alert">
-                        <h4>สมัครสมาชิก</h4>
+                    <div class="alert alert-info" role="alert">
+                        สมัครสมาชิก
                     </div>
                 </center>
                 <form action="register_add" method="post">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <h5>ที่อยู่ :</h5>
+                        <p>ที่อยู่ :</p>
                         <div class="col-4 mb-3">
                             <label for="exampleFormControlInput1" class="form-label">บ้านเลขที่</label>
                             <input type="text" name="cus_house_number" class="form-control" id="exampleFormControlInput1" required>

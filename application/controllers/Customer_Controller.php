@@ -54,7 +54,7 @@ class Customer_Controller extends CI_Controller {
                     echo "<script language='JavaScript'>";
                     echo "alert('กรุณาใส่รหัสอีกครั้ง')";
                     echo "</script>";
-					$this->load->view('header');
+					$this->load->view('header2');
 					$this->load->view('login');
 					$this->load->view('footer');
                 //$this->session->set_flashdata('msg_error', 'รหัสผ่านไม่ถูกต้องกรุณาตรวจสอบอีกครั้งค่ะ !');
@@ -91,7 +91,7 @@ class Customer_Controller extends CI_Controller {
 		echo "<script language='JavaScript'>";
         echo "alert('ลงทะเบียนสำเสร็จ')";
         echo "</script>";
-		$this->load->view('header');
+		$this->load->view('header2');
 		$this->load->view('login');
 		$this->load->view('footer');
 
