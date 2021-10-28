@@ -54,7 +54,7 @@
                 <div>
                     <?php foreach ($query2 as $item2) { ?>
                     ยอดชำระเงินของคุณ <?php echo $item2->service_rates ?> บาท
-                    <?php } ?>
+                    
                 </div>
             </div>
             <h5 id="center"></h5>
@@ -67,11 +67,11 @@
                     โปรดอัพโหลดรูปภาพ
                 </div>
             </div>
-            <form action="upload_file4" method="post" enctype="multipart/form-data">
-                <input type="number" name="ptg_id" value="<?php echo $item->pg_id ?>" hidden>
+            <form action="<?php echo site_url('Contract_Controller/upload_file5') ?>" method="post" enctype="multipart/form-data">
+                <input type="number" name="cm_id" value="<?php echo $item2->cm_id ?>" hidden>
                 <input type="text" name="status" value="สำเร็จ" hidden>
                 <br>
-                <input type="file" class="form-control" name="img4" id="img4">
+                <input type="file" class="form-control" name="img5" id="img5">
                 <br>
                 <center>
                     <!-- Button trigger modal -->
@@ -100,6 +100,7 @@
                     </div>
                 </center>
             </form>
+            <?php } ?>
         </div>
     </div>
 </div>

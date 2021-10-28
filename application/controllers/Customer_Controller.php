@@ -97,6 +97,48 @@ class Customer_Controller extends CI_Controller {
 
 	}
 
+	public function edit_profile_cus()
+	{
+		$cus_id = $this->session->userdata['cus_id'];
+		$data['query'] = $this->CTM->getprofile($cus_id);
+		$data['query2'] = $this->CTM->getaddress($cus_id);
+		$this->load->view('header_cus2');
+		$this->load->view('edit_profile_cus', $data);
+		$this->load->view('footer');
+	}
+
+	public function editing_profile()
+	{
+		$cus_id = $this->input->post("cus_id");
+		$cus_profile = array(
+			'cus_firstname' => $this->input->post("cus_firstname"),
+			'cus_lastname' => $this->input->post("cus_lastname"),
+			'cus_sex' => $this->input->post("cus_sex"),
+			'cus_email' => $this->input->post("cus_email"),
+			'cus_password' => $this->input->post("cus_password"),
+			'cus_phone' => $this->input->post("cus_phone"),
+			'cus_fbprofile' => $this->input->post("cus_fbprofile")
+		);
+		$cus_address = array(
+			'cus_house_number' => $this->input->post("cus_house_number"),
+			'cus_canton' => $this->input->post("cus_canton"),
+			'cus_district' => $this->input->post("cus_district"),
+			'cus_province' => $this->input->post("cus_province"),
+			'cus_postal_code' => $this->input->post("cus_postal_code")
+		);
+		$this->CTM->edit_profile($cus_profile, $cus_id);
+		$this->CTM->edit_address($cus_address, $cus_id);
+		echo "<script language='JavaScript'>";
+		echo "alert('แก้ไขสำเสร็จ')";
+		echo "</script>";
+		$cus_id = $this->session->userdata['cus_id'];
+		$data['query'] = $this->CTM->getprofile($cus_id);
+		$data['query2'] = $this->CTM->getaddress($cus_id);
+		$this->load->view('header_cus2');
+		$this->load->view('edit_profile_cus', $data);
+		$this->load->view('footer');
+	}
+
 	public function logout()
 	{
 		$this->session->sess_destroy();

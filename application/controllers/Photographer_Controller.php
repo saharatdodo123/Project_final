@@ -167,7 +167,7 @@ class Photographer_Controller extends CI_Controller
 		$data['photographer'] = $photographer->getphotographer();
 		$this->load->view('header_cus');
 		$this->load->view('listphotographer_cus', $data);
-		$this->load->view('footer');
+		$this->load->view('footer2');
 	}
 
 	public function showphotographer()

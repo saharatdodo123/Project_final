@@ -474,6 +474,53 @@ class Contract_Controller extends CI_Controller
 		}
 	}
 
+	public function upload_file5()
+	{
+		$cm_id = $this->input->post('cm_id');
+		$data = array();
+		$config['upload_path'] = 'img/';
+		$config['allowed_types'] = 'jpg|png';
+		$config['max_size'] = 5024;
+		$config['encrypt_name'] = true;
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('img5')) {
+			$img4 = '';
+		} else {
+			$fileData = $this->upload->data();
+			$img5 = $data['img5'] = $fileData['file_name'];
+		}
+
+		$this->db->set('img5', $img5);
+		$this->db->where('cm_id', $cm_id);
+		$result = $this->db->update('contract_employment');
+
+
+		if ($result) {
+			$status = array(
+				'status' => $this->input->post("status")
+			);
+			$cm_id = array(
+				'cm_id' => $this->input->post("cm_id")
+			);
+			$data['query'] = $this->CM->edit_contract_success($status, $cm_id);
+			echo "<script language='JavaScript'>";
+			echo "alert('อับโหลดสำเร็จ $img5')";
+			echo "</script>";
+			$admin_id = $this->session->userdata['admin_id'];
+			$data['query'] = $this->CM->getcontract_ptg($admin_id);
+			$this->load->view('header_admin');
+			$this->load->view('history_paymentcheck_admin', $data);
+			$this->load->view('footer_admin');
+		} else {
+			echo "<script language='JavaScript'>";
+			echo "alert('อับโหลดไม่สำเร็จ')";
+			echo "</script>";
+			$this->load->view('history_paymentcheck_admin');
+		}
+	}
+
 	public function showcontracting_ptg()
 	{
 		$cm_id = $this->input->post('cm_id');
@@ -593,5 +640,14 @@ class Contract_Controller extends CI_Controller
 		$this->load->view('header_admin');
 		$this->load->view('history_contract_admin', $data);
 		$this->load->view('footer_admin');
+	}
+
+	public function history_transfercheck_ptg()
+	{
+		$ptg_id = $this->session->userdata['ptg_id'];
+		$data['query'] = $this->CM->getcontract_ptg2($ptg_id);
+		$this->load->view('header_ptg');
+		$this->load->view('history_transfercheck_ptg', $data);
+		$this->load->view('footer_ptg');
 	}
 }

@@ -27,7 +27,12 @@
                     <form class="form-inline mr-auto" target="_self">
                         <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
                     </form>
-                    <li class="nav-item" style="list-style-type: none;" role="presentation"><a class="nav-link active action-button" href="<?php echo site_url('Customer_Controller') ?>">Log Out</a></li>
+                    <li class="dropdown" style="list-style-type: none;"><a class="dropdown-toggle nav-link dropdown-toggle action-button" data-toggle="dropdown" aria-expanded="false" href="#">&nbsp;&nbsp;&nbsp;<i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="<?php echo site_url('Customer_Controller/edit_profile_cus') ?>">แก้ไขประวัติส่วนตัว</a>
+                            <a class="dropdown-item" role="presentation" href="<?php echo site_url('Customer_Controller') ?>">ออกจากระบบ</a>
+                        </div>
+                    </li>
                 </div>
             </div>
         </nav>

@@ -56,6 +56,15 @@ class Payment_Controller extends CI_Controller {
 		$this->load->view('footer_admin');
 	}
 
+	public function showpayment_ptg()
+	{
+		$cm_id = $this->input->post('cm_id');
+		$data['query'] = $this->CM->showcontractByid($cm_id);
+		$this->load->view('header_ptg');
+		$this->load->view('showpayment_ptg',$data);
+		$this->load->view('footer_ptg');
+	}
+
 	public function transfer_admin()
 	{
 		$pg_id = $this->input->post('pg_id');

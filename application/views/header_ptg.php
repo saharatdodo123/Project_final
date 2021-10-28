@@ -49,7 +49,7 @@
 						<a href="<?php echo site_url('Photographer_Controller/edit_social') ?>"><span class="fa fa-rss-square mr-3"></span> แก้ไขช่องทางการติดต่อ </a>
 					</li>
 					<li>
-						<a href="#"><span class="fa fa-sticky-note mr-3"></span> รายการทั้งหมด</a>
+						<a href="<?php echo site_url('Contract_Controller/history_transfercheck_ptg') ?>"><span class="fa fa-sticky-note mr-3"></span> รายการทั้งหมด</a>
 					</li>
 					<li>
 						<a href="<?php echo site_url('Contract_Controller/history_ptg') ?>"><span class="fa fa-plane mr-3"></span> รอดำเนินการ</a>

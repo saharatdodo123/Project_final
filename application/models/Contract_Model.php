@@ -67,6 +67,15 @@ class Contract_Model extends CI_Model {
         return $query->result();
     }
 
+    function getcontract_ptg2($ptg_id)
+    {
+        $this->db->select('*')->from('contract_employment')
+        ->join('photographer', 'photographer.ptg_id=contract_employment.pg_id')
+        ->where('pg_id', $ptg_id);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function getcontract_cus($cus_id)
     {
         $this->db->select('*')->from('contract_employment')
