@@ -269,6 +269,14 @@ class Contract_Controller extends CI_Controller
 		$this->load->view('footer_ptg');
 	}
 
+	public function history_transfer_admin()
+	{
+		$data['query'] = $this->CM->getcontract_admin();
+		$this->load->view('header_admin');
+		$this->load->view('history_transfer_admin', $data);
+		$this->load->view('footer_admin');
+	}
+
 	public function history_paymentsuccess_cus()
 	{
 		$cus_id = $this->session->userdata['cus_id'];

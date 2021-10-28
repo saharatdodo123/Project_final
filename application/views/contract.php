@@ -94,17 +94,13 @@ $id = $this->session->userdata["cus_id"];
                         <input type="date" name="day_month_year" class="form-control" id="exampleFormControlInput1" placeholder="17 มกราคม 2564 หรือ 16 มกราคม 2564 - 18 มกราคม 2564" required>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-6">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">เวลานัดหมาย</label>
                         <input type="text" name="time" class="form-control" id="exampleFormControlInput1" placeholder="09.00 น." required>
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">ถึง</label>
-                        <input type="text" name="to_time" class="form-control" id="exampleFormControlInput1" placeholder="13.00 น.">
-                    </div>
                     <div class="mb-3">
                         <input type="text" name="status" class="form-control" value="รอการอนุมัติ" hidden>
                     </div>

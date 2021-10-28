@@ -87,6 +87,14 @@ class Photographer_Model extends CI_Model {
         return $query->result();
     }
 
+    function getpayment($pg_id)
+    {
+        $this->db->select('*')->from('payment')
+        ->where('pg_id', $pg_id);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function showphotographered($ptg_id)
     {
         $this->db->select('*')->from('photographer')

@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="<?php echo base_url('public'); ?>/style_form_admin.css">
 <div class="container">
-    <br>
     <div class="wrapper">
         <div class="title">
             เพิ่มผู้ดูแลระบบ
