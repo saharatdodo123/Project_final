@@ -5,7 +5,12 @@
       <br>
       <div class="row">
         <div class="col-10"> </div>
-        <div class="col-2"> ตำแหน่ง <?php echo $item->rank ?> </div>
+        <div class="col-2">
+          <form action="edit_profile_admin" method="post" enctype="multipart/form-data">
+            <input type="text" name="admin_id" value="admin_id" hidden>
+            <center> ตำแหน่ง <?php echo $item->rank ?> <br><br> <button type="submit" class="btn btn-warning">Edet</button> </center>
+          </form>
+        </div>
       </div>
       <br><br>
       <div class="row">

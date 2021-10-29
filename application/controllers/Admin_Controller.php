@@ -30,6 +30,39 @@ class Admin_Controller extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function edit_profile_admin()
+	{
+		$admin_id = $this->session->userdata['admin_id'];
+		$data['query'] = $this->AMM->showadmin($admin_id);
+		$this->load->view('header_admin');
+		$this->load->view('edit_profile_admin', $data);
+		$this->load->view('footer_admin');
+	}
+
+	public function editing_profile_admin()
+	{
+		$admin_id = $this->session->userdata['admin_id'];
+		$admin = array(
+			'name' => $this->input->post("name"),
+			'lastname' => $this->input->post("lastname"),
+			'email' => $this->input->post("email"),
+			'password' => $this->input->post("password"),
+			'sex' => $this->input->post("sex"),
+			'phone' => $this->input->post("phone"),
+			'address' => $this->input->post("address"),
+			'rank' => $this->input->post("rank")
+		);
+		$this->AMM->edit_profile_admin($admin, $admin_id);
+		echo "<script language='JavaScript'>";
+		echo "alert('แก้ไขสำเสร็จ')";
+		echo "</script>";
+		$admin_id = $this->session->userdata['admin_id'];
+		$data['query'] = $this->AMM->showadmin($admin_id);
+		$this->load->view('header_admin');
+        $this->load->view('home_admin', $data);
+        $this->load->view('footer_admin');
+	}
+
     public function register_admin()
 	{
 		$this->load->view('header_admin');

@@ -32,4 +32,11 @@ class Admin_Model extends CI_Model {
         $this->db->insert('admin', $data);
     }
 
+    function edit_profile_admin($admin,  $admin_id)
+    {
+        $this->db->set($admin);
+        $this->db->where('admin_id', $admin_id);
+        $this->db->UPDATE('admin');
+    }
+
 }
