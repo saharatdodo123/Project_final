@@ -151,6 +151,8 @@ class Customer_Controller extends CI_Controller
 	public function Rating_cus()
 	{
 		$ptg_score = array(
+			'name' => $this->input->post("name"),
+			'lastname' => $this->input->post("lastname"),
 			'ptg_id' => $this->input->post("ptg_id"),
 			'comment' => $this->input->post("comment"),
 			'score' => $this->input->post("score"),

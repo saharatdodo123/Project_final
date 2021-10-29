@@ -187,6 +187,15 @@
                                                         <input type="text" name="ptg_id" value="<?php echo $item->pg_id ?>" hidden>
                                                         <input type="text" name="cm_id" value="<?php echo $item->cm_id ?>" hidden>
                                                         <input type="text" name="status_score" value="ให้คะแนนแล้ว" hidden>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <input type="text" class="form-control" placeholder="ชื่อ" name="name" aria-label="First name">
+                                                            </div>
+                                                            <div class="col">
+                                                                <input type="text" class="form-control" placeholder="นามสกุล" name="lastname" aria-label="Last name">
+                                                            </div>
+                                                        </div>
+                                                        <br>
                                                         <div class="input-group">
                                                             <span class="input-group-text">ความคิดเห็น</span>
                                                             <textarea class="form-control" aria-label="With textarea" name="comment"></textarea>

@@ -30,13 +30,13 @@
             <td id="center"> <br> <?= $item->ptg_email ?> </td>
             <td id="center"> <br> <?= $item->ptg_phone ?> </td>
             <td id="center"> <br> <?= $item->sex ?> </td>
-            <td style="text-align: right;">
+            <td style="text-align: center;">
               <form action="./showcomment_cus" method="POST">
                 <input class="btn btn-info" type="text" name="ptg_id" value="<?php echo $item->ptg_id ?>" hidden><br>
-                <input class="btn btn-info" type="submit" value="ความคิดเห็น">
+                <button type="submit" class="btn btn-light"><i class="fa fa-commenting-o fa-1x" aria-hidden="true"></i></button>
               </form>
             </td>
-            <td style="text-align: left;">
+            <td style="text-align: center;">
               <form action="./showphotographer_cus" method="POST">
                 <input class="btn btn-info" type="text" name="ptg_id" value="<?php echo $item->ptg_id ?>" hidden><br>
                 <input class="btn btn-info" type="submit" value="ดูรายละเอียด">

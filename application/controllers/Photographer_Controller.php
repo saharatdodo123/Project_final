@@ -195,6 +195,7 @@ class Photographer_Controller extends CI_Controller
 		$ptg_id = $this->input->post('ptg_id');
 		$data['query'] = $this->PTM->showphotographered($ptg_id);
 		$data['query2'] = $this->PTM->showscore($ptg_id);
+		$data['query3'] = $this->PTM->showcomment_cus($ptg_id);
 		$this->load->view('header_cus');
 		$this->load->view('showcomment_cus', $data);
 		$this->load->view('footer');

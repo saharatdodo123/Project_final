@@ -1,9 +1,13 @@
 <div class="container">
     <br>
     <div class="row">
+        <div class="col-1">
+
+        </div>
         <div class="col-5">
             <?php foreach ($query as $item) { ?>
                 <center>
+                    <br><br>
                     <img src="<?= base_url('img/' . $item->ptg_img) ?>" height="180" width="180" alt="Admin" class="rounded-circle" width="150">
                     <br><br>
                     <h4><?php echo $item->ptg_nickname ?></h4>
@@ -30,17 +34,40 @@
                     </div>
                 </center>
             <?php } ?>
+            <br><br><br>
         </div>
-        <div class="col-7">
-            <div class="card">
-                <div class="container">
+        <div class="col-1">
+
+        </div>
+        <div class="col-4">
+
+            <div class="container">
+                <br>
+                <?php foreach ($query2 as $item2) { ?>
+                    <?php if ($item2->score != '') { ?>
+                    <p style="text-align: right;"><i class="fa fa-star-half-o" aria-hidden="true"> </i> <?php echo ($item2->score) ?> คะแนน</p>
+                    <h4>Comment</h4>
+                    <?php } else { ?>
+                    <?php }; ?>
+                    <?php if ($item2->score == '') { ?>
+                        <p style="text-align: right;"><i class="fa fa-star-half-o" aria-hidden="true"> </i> <?php echo ($item2->score) ?>0 คะแนน</p>
+                        <h4>Comment</h4>
                         <br>
-                        <?php foreach ($query2 as $item2) { ?>
-                        <p style="color: #000; text-align: right;"><i class="fa fa-star-half-o" aria-hidden="true"> </i> <?php echo ($item2->score) ?> คะแนน</p>
-                        <p style="color: #000; "><?php echo $item2->comment ?></p>
-                        <?php } ?>
-                </div>
+                        <center>" Not Coment "</center>
+                    <?php } else { ?>
+                    <?php }; ?>
+                <?php } ?>
+                <?php foreach ($query3 as $item3) { ?>
+                    <div class="card">
+                        <div class="container">
+                            <br><br>
+                            <h6 style="color: #808080; font-size: 16px;"> <i class="fa fa-address-card-o fa-1x" aria-hidden="true"></i> <?php echo $item3->name ?> <?php echo $item3->lastname ?> </h6>
+                            <h6 style="color: #808080; font-size: 14px;"> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $item3->comment ?> </h6>
+                            <br>
+                        </div>
+                    </div>
+                    <br>
+                <?php } ?>
             </div>
         </div>
     </div>
-</div>
