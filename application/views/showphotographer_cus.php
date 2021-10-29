@@ -95,60 +95,29 @@
                   </center>
                   <br>
                 </div>
-                <div class="col-sm-3">
-                  <h6 class="mb-0">ชื่อ</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <?php echo $item->ptg_firstname ?>
-                </div>
-              </div>
-              <hr>
+                <div class="col-sm-3"> <h6 class="mb-0">ชื่อ</h6> </div>
+                <div class="col-sm-9 text-secondary"> <?php echo $item->ptg_firstname ?> </div>
+              </div><hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">นามสกุล</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <?php echo $item->ptg_lastname ?>
-                </div>
-              </div>
-              <hr>
+                <div class="col-sm-3"> <h6 class="mb-0">นามสกุล</h6> </div>
+                <div class="col-sm-9 text-secondary"> <?php echo $item->ptg_lastname ?> </div>
+              </div><hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">เพศ</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <?php echo $item->sex ?>
-                </div>
-              </div>
-              <hr>
+                <div class="col-sm-3"> <h6 class="mb-0">เพศ</h6> </div>
+                <div class="col-sm-9 text-secondary"> <?php echo $item->sex ?> </div>
+              </div><hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">อีเมล์</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <?php echo $item->ptg_email ?>
-                </div>
-              </div>
-              <hr>
+                <div class="col-sm-3"> <h6 class="mb-0">อีเมล์</h6> </div>
+                <div class="col-sm-9 text-secondary"> <?php echo $item->ptg_email ?> </div>
+              </div><hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">เบอร์โทรศัพท์</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <?php echo $item->ptg_phone ?>
-                </div>
-              </div>
-              <hr>
+                <div class="col-sm-3"> <h6 class="mb-0">เบอร์โทรศัพท์</h6> </div>
+                <div class="col-sm-9 text-secondary"> <?php echo $item->ptg_phone ?> </div>
+              </div><hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">จังหวัด</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <?php echo $item->pg_province ?>
-                </div>
-              </div>
-
-              <br>
+                <div class="col-sm-3"> <h6 class="mb-0">จังหวัด</h6> </div>
+                <div class="col-sm-9 text-secondary"> <?php echo $item->pg_province ?> </div>
+              </div><br>
               <div class="row">
                 <div class="col-sm-12">
                   <br>
@@ -159,57 +128,30 @@
                   </center>
                   <br>
                 </div>
-                <div class="col-sm-3">
-                  <h6 class="mb-0">ยี่ห้อ</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <h6><?php echo $item->brand ?></h6>
-                </div>
+                <div class="col-sm-3"> <h6 class="mb-0">ยี่ห้อ</h6> </div>
+                <div class="col-sm-9 text-secondary"><h6> <?php echo $item->brand ?></h6> </div>
+              </div><hr>
+              <div class="row">
+                <div class="col-sm-3"> <h6 class="mb-0">เลนส์กล้อง</h6> </div>
+                <div class="col-sm-9 text-secondary"> <h6><?php echo $item->camera_lens ?></h6> </div>
               </div>
               <hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">เลนส์กล้อง</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <h6><?php echo $item->camera_lens ?></h6>
-                </div>
-              </div>
-              <hr>
+                <div class="col-sm-3"> <h6 class="mb-0">ไฟสนาม</h6> </div>
+                <div class="col-sm-9 text-secondary"> <h6><?php echo $item->studio_light ?></h6> </div>
+              </div><hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">ไฟสนาม</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <h6><?php echo $item->studio_light ?></h6>
-                </div>
-              </div>
-              <hr>
+                <div class="col-sm-3"> <h6 class="mb-0">ขาตั้งกล้อง</h6> </div>
+                <div class="col-sm-9 text-secondary"> <h6><?php echo $item->camera_tripod ?></h6> </div>
+              </div><hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">ขาตั้งกล้อง</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <h6><?php echo $item->camera_tripod ?></h6>
-                </div>
-              </div>
-              <hr>
+                <div class="col-sm-3"> <h6 class="mb-0">เมมโมรี่การ์ด</h6> </div>
+                <div class="col-sm-9 text-secondary"> <h6><?php echo $item->memory_card ?></h6></div>
+              </div><hr>
               <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">เมมโมรี่การ์ด</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <h6><?php echo $item->memory_card ?></h6>
-                </div>
+                <div class="col-sm-3"> <h6 class="mb-0">แบตเตอร์รี่สำรอง</h6> </div>
+                <div class="col-sm-9 text-secondary"> <h6><?php echo $item->battery ?></h6>
               </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">แบตเตอร์รี่สำรอง</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <h6><?php echo $item->battery ?></h6>
-                </div>
               </div>
             </div>
           </div>
