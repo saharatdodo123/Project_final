@@ -58,4 +58,9 @@ class Customer_Model extends CI_Model {
     {
         $this->db->insert('ptg_imageresult', $ptg_imageresult);
     }
+
+    function add_score($ptg_score)
+    {
+        $this->db->insert('ptg_score', $ptg_score);
+    }
 }

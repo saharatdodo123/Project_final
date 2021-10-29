@@ -15,7 +15,10 @@
         <tr>
           <th scope="col"> </th>
           <th scope="col"> ชื่อ-นามสกุล</th>
-          <th scope="col"> คะแนน </th>
+          <th scope="col"> อีเมล </th>
+          <th scope="col"> เบอร์โทร </th>
+          <th scope="col"> เพศ </th>
+          <th scope="col"> </th>
           <th scope="col"> </th>
         </tr>
       </thead>
@@ -23,50 +26,17 @@
         <?php foreach ($photographer as $item) { ?>
           <tr>
             <td id="center"> <img src="<?= base_url('img/' . $item->ptg_img) ?>" height="80" width="80" alt="Photographer Img"> </td>
-            <td id="center"> <?= $item->ptg_firstname ?> <?= $item->ptg_lastname ?> </td>
-            <td id="center">
-              <?php
-              if ($item->ptg_score >= 30) { ?>
-                <br><img src="<?php echo base_url('img'); ?>/icon.png" alt="">
-              <?php
-              } else { ?>
-                <br><img src="<?php echo base_url('img'); ?>/icon1.png" alt="">
-              <?php }; ?>
-
-              <?php
-              if ($item->ptg_score >= 60) { ?>
-                <img src="<?php echo base_url('img'); ?>/icon.png" alt="">
-              <?php
-              } else { ?>
-                <img src="<?php echo base_url('img'); ?>/icon1.png" alt="">
-              <?php }; ?>
-
-              <?php
-              if ($item->ptg_score >= 90) { ?>
-                <img src="<?php echo base_url('img'); ?>/icon.png" alt="">
-              <?php
-              } else { ?>
-                <img src="<?php echo base_url('img'); ?>/icon1.png" alt="">
-              <?php }; ?>
-
-              <?php
-              if ($item->ptg_score >= 120) { ?>
-                <img src="<?php echo base_url('img'); ?>/icon.png" alt="">
-              <?php
-              } else { ?>
-                <img src="<?php echo base_url('img'); ?>/icon1.png" alt="">
-              <?php }; ?>
-
-              <?php
-              if ($item->ptg_score >= 150) { ?>
-                <img src="<?php echo base_url('img'); ?>/icon.png" alt="">
-              <?php
-
-              } else { ?>
-                <img src="<?php echo base_url('img'); ?>/icon1.png" alt="">
-              <?php }; ?>
+            <td id="center"> <br> <?= $item->ptg_firstname ?> <?= $item->ptg_lastname ?> </td>
+            <td id="center"> <br> <?= $item->ptg_email ?> </td>
+            <td id="center"> <br> <?= $item->ptg_phone ?> </td>
+            <td id="center"> <br> <?= $item->sex ?> </td>
+            <td style="text-align: right;">
+              <form action="./showcomment_cus" method="POST">
+                <input class="btn btn-info" type="text" name="ptg_id" value="<?php echo $item->ptg_id ?>" hidden><br>
+                <input class="btn btn-info" type="submit" value="ความคิดเห็น">
+              </form>
             </td>
-            <td id="center">
+            <td style="text-align: left;">
               <form action="./showphotographer_cus" method="POST">
                 <input class="btn btn-info" type="text" name="ptg_id" value="<?php echo $item->ptg_id ?>" hidden><br>
                 <input class="btn btn-info" type="submit" value="ดูรายละเอียด">

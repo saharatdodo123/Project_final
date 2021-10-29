@@ -113,4 +113,21 @@ class Photographer_Model extends CI_Model {
         return $query->result();
     }
 
+    function showscore($ptg_id)
+    {
+        $query = $this->db->select_sum('score')
+        ->from('ptg_score')
+        ->where('ptg_id', $ptg_id)
+        ->select('comment')
+        ->get();
+        return $query->result();
+    }
+
+    function showcomment($ptg_id)
+    {
+        $this->db->where('ptg_id',$ptg_id);
+        $query = $this->db->get('ptg_score');
+        return $query->result();
+    }
+
 }

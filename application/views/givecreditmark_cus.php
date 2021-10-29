@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-6">
@@ -133,45 +136,83 @@
     </div>
     <br>
     <div class="card">
+        <br>
         <div class="container">
-            <br>
             <center>
                 <div class="alert alert-info" role="alert">
-                    รอการชำระเงินงวดที่ 3
+                    ให้คะแนนช่างภาพ
                 </div>
             </center>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">ชื่อผู้รับจ้าง</th>
-                        <th scope="col">ประเภทงาน</th>
-                        <th scope="col">รูปแบบการจ้าง</th>
-                        <th scope="col">วัน-เดือน-ปี</th>
-                        <th scope="col">เวลา</th>
-                        <th scope="col">ค่าบริการ</th>
-                        <th scope="col">สถานะ</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th scope="col" style="text-align: center;">ชื่อผู้รับจ้าง</th>
+                        <th scope="col" style="text-align: center;">ประเภทงาน</th>
+                        <th scope="col" style="text-align: center;">รูปแบบการจ้าง</th>
+                        <th scope="col" style="text-align: center;">วัน-เดือน-ปี</th>
+                        <th scope="col" style="text-align: center;">เวลา</th>
+                        <th scope="col" style="text-align: center;">ค่าบริการ</th>
+                        <th scope="col" style="text-align: center;">สถานะ</th>
+                        <th> </th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($query as $item) { ?>
-                        <?php if ($item->status == 'รอการชำระเงินงวดที่3') { ?>
+                        <?php if ($item->status_score == '' && $item->status == 'สำเร็จ') { ?>
                             <tr>
-                                <td id="center"><?php echo $item->ptg_firstname ?> <?php echo $item->ptg_lastname ?></td>
-                                <td id="center"><?php echo $item->type_of_work ?></td>
-                                <td id="center"><?php echo $item->form_of_employment ?></td>
-                                </td>
-                                <td id="center"><?php echo $item->day_month_year ?></td>
-                                <td id="center"><?php echo $item->time ?></td>
-                                <td id="right"><?php echo number_format($item->service_rates) ?> บาท</td>
-                                <td id="center"><?php echo $item->status ?></td>
-                                <td id="center">
-                                    <form action="history_payment3_cus" method="POST">
-                                        <input type="text" name="cm_id" value="<?php echo $item->cm_id ?>" hidden>
-                                        <input class="btn btn-info" type="submit" value="ชำระเงิน">
+                                <td style="text-align: center;"><?php echo $item->ptg_firstname ?> <?php echo $item->ptg_lastname ?></td>
+                                <td style="text-align: center;"><?php echo $item->type_of_work ?></td>
+                                <td style="text-align: center;"><?php echo $item->form_of_employment ?></td>
+                                <td style="text-align: center;"><?php echo $item->day_month_year ?></td>
+                                <td style="text-align: center;"><?php echo $item->time ?></td>
+                                <td style="text-align: center;"><?php echo $item->service_rates ?> ฿</td>
+                                <td style="text-align: center;"><?php echo $item->status ?></td>
+                                <td style="text-align: center;">
+                                    <form action="<?php echo site_url('Customer_Controller/Rating_cus') ?>" method="POST">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            ให้คะแนนช่างภาพ
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticBackdropLabel">ให้คะแนนช่างภาพ</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <br><br>
+                                                        <input type="text" name="ptg_id" value="<?php echo $item->pg_id ?>" hidden>
+                                                        <input type="text" name="cm_id" value="<?php echo $item->cm_id ?>" hidden>
+                                                        <input type="text" name="status_score" value="ให้คะแนนแล้ว" hidden>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">ความคิดเห็น</span>
+                                                            <textarea class="form-control" aria-label="With textarea" name="comment"></textarea>
+                                                        </div>
+                                                        <br>
+                                                        <div class="input-group mb-3">
+                                                            <button class="btn btn-outline-secondary" type="button">คะแนน</button>
+                                                            <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="score">
+                                                                <option selected> </option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-info">ยืนยัน</button>
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </form>
-                                </td>
                                 </td>
                             </tr>
                         <?php } else { ?>
@@ -179,6 +220,11 @@
                     <?php } ?>
                 </tbody>
             </table>
-            <br><br><br><br><br>
         </div>
     </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('.table').DataTable();
+    });
+</script>

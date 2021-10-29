@@ -96,6 +96,13 @@ class Contract_Model extends CI_Model {
         $this->db->UPDATE('contract_employment', $status, $cm_id);
     }
 
+    function edit_contractstatus($cm_id, $status_score)
+    {
+        $this->db->set('status_score', $status_score);
+        $this->db->where('cm_id', $cm_id);
+        $this->db->UPDATE('contract_employment');
+    }
+
     function deletecontract($cm_id)
     {
         $this->db->where('cm_id', $cm_id);

@@ -12,11 +12,13 @@
         <div class="alert alert-info" role="alert">
           Status
         </div>
-        <a href="<?php echo site_url('Contract_Controller/history_paymentcheck_admin') ?>" type="button" class="btn btn-secondary">รอตรวจสอบการชำระเงิน งวดที่1</a>
+        <a href="<?php echo site_url('Contract_Controller/history_paymentcheck_admin') ?>" style="width:240px;height:40px;" type="button" class="btn btn-secondary">รอตรวจสอบการชำระเงิน งวดที่1</a>
         <br><br>
-        <a href="<?php echo site_url('Contract_Controller/history_paymentcheck2_admin') ?>" type="button" class="btn btn-secondary">รอตรวจสอบการชำระเงิน งวดที่2</a>
+        <a href="<?php echo site_url('Contract_Controller/history_paymentcheck2_admin') ?>" style="width:240px;height:40px;" type="button" class="btn btn-secondary">รอตรวจสอบการชำระเงิน งวดที่2</a>
         <br><br>
-        <a href="<?php echo site_url('Contract_Controller/history_paymentcheck3_admin') ?>" type="button" class="btn btn-secondary">รอตรวจสอบการชำระเงิน งวดที่3</a>
+        <a href="<?php echo site_url('Contract_Controller/history_paymentcheck3_admin') ?>" style="width:240px;height:40px;" type="button" class="btn btn-secondary">รอตรวจสอบการชำระเงิน งวดที่3</a>
+        <br><br>
+        <a href="<?php echo site_url('Contract_Controller/history_transfer_admin') ?>" style="width:240px;height:40px;" type="button" class="btn btn-secondary">รอการชำระเงินให้ช่างภาพ</a>
       </center>
     </div>
     <div class="col-9">

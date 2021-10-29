@@ -21,7 +21,7 @@
 		<nav id="sidebar" class="img" style="background-image: url(images/bg_1.jpg);">
 			<div class="p-4">
 				<center>
-					<h3><a href="<?php echo site_url('Admin_Controller/home_admin') ?>" class="logo" style="color: #fff;">PHOTOGRAPHER<br>GALLERY</span></a></h3>
+					<h3><a href="<?php echo site_url('Photographer_Controller/home_ptg') ?>" class="logo" style="color: #fff;">PHOTOGRAPHER<br>GALLERY</span></a></h3>
 				</center>
 				<ul class="list-unstyled components mb-5">
 					<li>

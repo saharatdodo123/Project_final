@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-6">
@@ -133,52 +136,47 @@
     </div>
     <br>
     <div class="card">
+        <br>
         <div class="container">
-            <br>
             <center>
                 <div class="alert alert-info" role="alert">
-                    รอการชำระเงินงวดที่ 3
+                    ประวัติการดำเนินการ
                 </div>
             </center>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">ชื่อผู้รับจ้าง</th>
-                        <th scope="col">ประเภทงาน</th>
-                        <th scope="col">รูปแบบการจ้าง</th>
-                        <th scope="col">วัน-เดือน-ปี</th>
-                        <th scope="col">เวลา</th>
-                        <th scope="col">ค่าบริการ</th>
-                        <th scope="col">สถานะ</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th scope="col" style="text-align: center;">ชื่อผู้รับจ้าง</th>
+                        <th scope="col" style="text-align: center;">ประเภทงาน</th>
+                        <th scope="col" style="text-align: center;">รูปแบบการจ้าง</th>
+                        <th scope="col" style="text-align: center;">วัน-เดือน-ปี</th>
+                        <th scope="col" style="text-align: center;">เวลา</th>
+                        <th scope="col" style="text-align: center;">ค่าบริการ</th>
+                        <th scope="col" style="text-align: center;">สถานะ</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($query as $item) { ?>
-                        <?php if ($item->status == 'รอการชำระเงินงวดที่3') { ?>
+                        <?php if ($item->status_score != '' && $item->status == 'สำเร็จ') { ?>
                             <tr>
-                                <td id="center"><?php echo $item->ptg_firstname ?> <?php echo $item->ptg_lastname ?></td>
-                                <td id="center"><?php echo $item->type_of_work ?></td>
-                                <td id="center"><?php echo $item->form_of_employment ?></td>
-                                </td>
-                                <td id="center"><?php echo $item->day_month_year ?></td>
-                                <td id="center"><?php echo $item->time ?></td>
-                                <td id="right"><?php echo number_format($item->service_rates) ?> บาท</td>
-                                <td id="center"><?php echo $item->status ?></td>
-                                <td id="center">
-                                    <form action="history_payment3_cus" method="POST">
-                                        <input type="text" name="cm_id" value="<?php echo $item->cm_id ?>" hidden>
-                                        <input class="btn btn-info" type="submit" value="ชำระเงิน">
-                                    </form>
-                                </td>
-                                </td>
+                                <td style="text-align: center;"><?php echo $item->ptg_firstname ?> <?php echo $item->ptg_lastname ?></td>
+                                <td style="text-align: center;"><?php echo $item->type_of_work ?></td>
+                                <td style="text-align: center;"><?php echo $item->form_of_employment ?></td>
+                                <td style="text-align: center;"><?php echo $item->day_month_year ?></td>
+                                <td style="text-align: center;"><?php echo $item->time ?></td>
+                                <td style="text-align: center;"><?php echo $item->service_rates ?> ฿</td>
+                                <td style="text-align: center;"><?php echo $item->status ?></td>
                             </tr>
                         <?php } else { ?>
                         <?php }; ?>
                     <?php } ?>
                 </tbody>
             </table>
-            <br><br><br><br><br>
         </div>
     </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('.table').DataTable();
+    });
+</script>

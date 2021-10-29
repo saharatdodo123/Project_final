@@ -37,7 +37,7 @@
                             <input type="text" name="cus_lastname" class="form-control" id="exampleFormControlInput1" required>
                         </div>
                         <div class="col-4 mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">ชาย</label>
+                            <label for="exampleFormControlInput1" class="form-label">เพศ</label>
                             <select class="form-select" id="inputGroupSelect01" name="cus_sex" required>
                                 <option selected>Choose...</option>
                                 <option value="ชาย">ชาย</option>
